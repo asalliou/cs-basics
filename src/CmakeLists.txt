@@ -1,0 +1,5 @@
+# Sources
+set(SRCS hello.cpp)
+
+# Indicate that a binary name hello should be produced from SRCS
+add_executable(hello ${SRCS})

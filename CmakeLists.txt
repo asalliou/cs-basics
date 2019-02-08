@@ -1,11 +1,5 @@
-# Specify the minimum version for CMake
 cmake_minimum_required(VERSION 3.0)
 
-# Project's name
 project(hello)
 
-# Sources
-set(SRCS hello.cpp)
-
-# Indicate that a binary name hello should be produced from SRCS
-add_executable(hello ${SRCS})
+add_subdirectory(src)
