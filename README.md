@@ -4,5 +4,5 @@
 mkdir build
 cmake ..
 make
-./src/hello
+./bin/main
 ```

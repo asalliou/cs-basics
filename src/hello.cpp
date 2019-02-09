@@ -1,6 +1,6 @@
-#include <iostream>
+#include "hello.h"
 
-int main() {
-    std::cout << "Hello World !!" << std::endl;
-    return 0;
+std::string get_hello()
+{
+    return "Hello World !!!";
 }
