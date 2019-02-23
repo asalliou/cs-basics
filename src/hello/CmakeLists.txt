@@ -1,0 +1,22 @@
+# Hello library
+add_library(hello "")
+
+target_sources(
+    hello
+    PRIVATE
+        hello.cpp
+    PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}/hello.h
+    )
+
+target_include_directories(
+    hello
+    PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}
+    )
+
+# Main executable
+set(SRCS main.cpp)
+
+add_executable(main ${SRCS})
+target_link_libraries(main hello)
