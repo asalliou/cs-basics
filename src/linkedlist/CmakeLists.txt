@@ -1,0 +1,22 @@
+# Linked list library
+add_library(linkedlist "")
+
+target_sources(
+    linkedlist
+    PRIVATE
+        node.cpp
+    PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}/node.h
+    )
+
+target_include_directories(
+    linkedlist
+    PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR}
+    )
+
+# Main executable
+set(SRCS main.cpp)
+
+add_executable(main-linkedlist ${SRCS})
+target_link_libraries(main-linkedlist linkedlist)

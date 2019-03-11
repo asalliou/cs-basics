@@ -7,7 +7,7 @@ mkdir build
 cd build
 cmake ..
 make
-./bin/main
+./bin/main-[project]
 ```
 
 ## Testing
@@ -18,4 +18,5 @@ ctest
 
 ## References
 
-https://github.com/bast/gtest-demo
+ * c++ & unit test : https://github.com/bast/gtest-demo
+ * Linked list : http://cslibrary.stanford.edu/105/LinkedListProblems.pdf

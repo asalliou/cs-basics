@@ -18,5 +18,5 @@ target_include_directories(
 # Main executable
 set(SRCS main.cpp)
 
-add_executable(main ${SRCS})
-target_link_libraries(main hello)
+add_executable(main-hello ${SRCS})
+target_link_libraries(main-hello hello)
