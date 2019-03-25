@@ -2,7 +2,7 @@
 #include "node.h"
 
 int main() {
-    struct node *head = NULL;
+    struct node *head = nullptr;
 
     head = insertHead(1, head);
     head = insertHead(2, head);

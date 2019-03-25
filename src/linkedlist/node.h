@@ -18,19 +18,19 @@ struct node* insertHead(int data, struct node *next) {
  void insertTail(int data, struct node *first) {
   struct node *current = first;
 
-  while (current->next != NULL) {
+  while (current->next != nullptr) {
     current = current->next;
   }
 
   struct node *last = (struct node *)malloc(sizeof(node));
   last->data = data;
-  last->next = NULL;
+  last->next = nullptr;
   current->next = last;
 }
 
 void print(struct node *head) {
   struct node *current = head;
-  while(current != NULL) {
+  while(current != nullptr) {
     std::cout << "Data: " << current->data << std::endl;
     current = current->next;
   }
@@ -39,7 +39,7 @@ void print(struct node *head) {
 int length(struct node *head) {
   struct node *current = head;
   int count = 0;
-  while(current != NULL) {
+  while(current != nullptr) {
     count++;
     current = current->next;
   }
@@ -51,4 +51,20 @@ void swap(struct node **first, struct node **second) {
 
   *first = *second;
   *second = buffer;
+}
+
+int getNth(struct node *head, int index, int *error) {
+  int current_index = 0;
+  struct node *current_node = head;
+
+  while (current_node != nullptr) {
+    if (current_index == index) {
+      return current_node->data;
+    }
+    current_index++;
+    current_node = current_node->next;
+  }
+  
+  *error = 1;
+  return -1;
 }
