@@ -8,11 +8,24 @@ struct node {
   struct node *next;
 };
 
-struct node* insert(int data, struct node *next) {
+struct node* insertHead(int data, struct node *next) {
   struct node *new_node = (struct node *)malloc(sizeof(node));
   new_node->data = data;
   new_node->next = next;
   return new_node;
+}
+
+ void insertTail(int data, struct node *first) {
+  struct node *current = first;
+
+  while (current->next != NULL) {
+    current = current->next;
+  }
+
+  struct node *last = (struct node *)malloc(sizeof(node));
+  last->data = data;
+  last->next = NULL;
+  current->next = last;
 }
 
 void print(struct node *head) {

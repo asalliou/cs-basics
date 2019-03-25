@@ -4,10 +4,10 @@
 int main() {
     struct node *head = NULL;
 
-    head = insert(1, head);
-    head = insert(2, head);
-    head = insert(3, head);
-    head = insert(9, head);
+    head = insertHead(1, head);
+    head = insertHead(2, head);
+    head = insertHead(3, head);
+    head = insertHead(5, head);
     
     print(head);
 
@@ -24,6 +24,8 @@ int main() {
     swap(&first, &second);
     std::cout << "First: " << first->data << " Second: " << second->data << std::endl;
     
+    insertTail(6, head);
+    print(head);
 
     return 0;
 }
