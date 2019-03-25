@@ -32,3 +32,10 @@ int length(struct node *head) {
   }
   return count;
 }
+
+void swap(struct node **first, struct node **second) {
+  struct node *buffer = *first;
+
+  *first = *second;
+  *second = buffer;
+}
