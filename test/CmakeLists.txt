@@ -1,12 +1,14 @@
 add_executable(
     unit_tests
     hello_hello.cpp
+    linkedlist_node.cpp
     )
 
 target_link_libraries(
     unit_tests
     gtest_main
     hello
+    linkedlist
     )
 
 add_test(
