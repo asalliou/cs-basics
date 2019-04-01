@@ -1,7 +1,8 @@
 add_executable(
     unit_tests
-    hello_hello.cpp
-    linkedlist_node.cpp
+    hello.cpp
+    linkedlist.cpp
+    hashmap.cpp
     )
 
 target_link_libraries(
@@ -9,6 +10,7 @@ target_link_libraries(
     gtest_main
     hello
     linkedlist
+    hashmap
     )
 
 add_test(
