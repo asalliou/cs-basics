@@ -23,3 +23,12 @@ TEST(hashmap, getput)
     ASSERT_EQ(10, map.get(1));
     ASSERT_EQ(11, map.get(21));
 }
+
+TEST(hashmap, edge)
+{
+    HashMap<int, int, MyKeyHash> map;
+    
+    //ASSERT_EQ(0, map.get(0));
+    //map.put(1, 10);
+    //ASSERT_EQ(nullptr, map.get(21));
+}

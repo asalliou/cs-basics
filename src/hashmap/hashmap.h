@@ -1,4 +1,4 @@
-#include "HashNode.h"
+#include "hashnode.h"
 
 const int mapSize = 20;
 

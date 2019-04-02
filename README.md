@@ -10,6 +10,12 @@ make
 ./bin/main-[project]
 ```
 
+## Xcode
+
+```
+cmake -G Xcode -H. -B_build
+```
+
 ## Testing
 
 ```
