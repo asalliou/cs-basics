@@ -54,6 +54,27 @@ public:
         }
         
     }
+    
+    void remove(const K& key) {
+        int index = hashFunc(key);
+        HashNode<K, V> *node = table[index];
+        
+        if (node != nullptr && node->getKey() == key) {
+            table[index] = node->getNext();
+            delete node;
+        } else if (node != nullptr) {
+            HashNode<K, V> *previousNode = nullptr;
+            while (node != nullptr) {
+                if (node->getKey() == key) {
+                    previousNode->setNext(nullptr);
+                    delete node;
+                    break;
+                }
+                previousNode = node;
+                node = node->getNext();
+            }
+        }
+    }
 
 private:
     HashNode<K, V> **table;

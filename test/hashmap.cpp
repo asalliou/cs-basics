@@ -32,3 +32,30 @@ TEST(hashmap, edge)
     map.put(1, 10);
     ASSERT_FALSE(map.get(21).has_value());
 }
+
+TEST(hashmap, remove)
+{
+    HashMap<int, int, MyKeyHash> map;
+    
+    map.put(1, 1);
+    map.put(2, 2);
+    
+    map.remove(2);
+    map.remove(3);
+    
+    ASSERT_TRUE(map.get(1).has_value());
+    ASSERT_FALSE(map.get(2).has_value());
+    
+    map.put(21, 21);
+    map.remove(1);
+    
+    ASSERT_FALSE(map.get(1).has_value());
+    ASSERT_TRUE(map.get(21).has_value());
+    
+    map.put(41, 41);
+    map.remove(41);
+    
+    ASSERT_FALSE(map.get(41).has_value());
+    ASSERT_TRUE(map.get(21).has_value());
+
+}
