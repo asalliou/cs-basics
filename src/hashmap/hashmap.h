@@ -1,5 +1,7 @@
 #include "hashnode.h"
 
+#include <optional>
+
 const int mapSize = 20;
 
 template < typename K, typename V, typename F>
@@ -38,14 +40,19 @@ public:
         }
     }
 
-    V get(const K &key) {
+    std::optional<V> get(const K &key) {
         int index = hashFunc(key);
         HashNode<K, V> *node = table[index];
 
-        while (node->getKey() != key) {
+        while (node != nullptr && node->getKey() != key) {
             node = node->getNext();
         }
-        return node->getValue();
+        if (node != nullptr) {
+            return node->getValue();
+        } else {
+            return {};
+        }
+        
     }
 
 private:

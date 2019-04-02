@@ -14,6 +14,7 @@ make
 
 ```
 cmake -G Xcode -H. -B_build
+open _build/cs-basic.xcodeproj
 ```
 
 ## Testing

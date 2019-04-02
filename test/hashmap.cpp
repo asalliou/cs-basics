@@ -28,7 +28,7 @@ TEST(hashmap, edge)
 {
     HashMap<int, int, MyKeyHash> map;
     
-    //ASSERT_EQ(0, map.get(0));
-    //map.put(1, 10);
-    //ASSERT_EQ(nullptr, map.get(21));
+    ASSERT_FALSE(map.get(0).has_value());
+    map.put(1, 10);
+    ASSERT_FALSE(map.get(21).has_value());
 }
